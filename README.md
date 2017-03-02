@@ -17,7 +17,9 @@ To test other methodologies, users can change the following to test their own st
 1. Open country_indicies.csv and update the columns for the tickers you wish to test
 2. Edit the model class to run the strategy you wish to test. The model class needs to output a list of tickers you wish to trade, which will be traded by the trader class on the next business day.
 3. In backtester.startBacktest(), the last if statement determines when to run the model, generating new trades. If no trades are generated, the positions continue into perpetuity. The current script triggers the model at the beginning of each month.
+4. If you're pulling data from Quandl (pricing or GDP), input your Quandl authtoken on line 76 and 198
+5. If you want to pull data from Quandl, change line 225, the marketData initializer to be marketData(tickerList,'quandl'). The tickers in the CSV must be in Quandl code format (i.e. 'database/ticker').
 
 #Output
 
-The output of the analysis will be a pyplot graph and an Excel spreadsheet. The Excel spreadsheet will contain all data to help you judge the viability of the trading strategy. It will contain an account equity graph over time, a tab with all trades, and a tab with daily profit and losses. The Excel spreadsheet will output to the same file, and will be labeled backtestIshares.xlsx.
+The output of the analysis will be a pyplot graph and an Excel spreadsheet. The Excel spreadsheet will contain all data to help you judge the viability of the trading strategy. It will contain an account equity graph over time, a tab with all trades, and a tab with daily profit and losses on holdings. The Excel spreadsheet will output to the same file, and will be labeled backtest.xlsx.

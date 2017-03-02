@@ -73,7 +73,7 @@ class model:
     def gdpData(self,countries,country_weights):
         gdpDf = pd.DataFrame({'Value':[],'country_code':[]})
         for i in countries:
-            gdp = quandl.get("WWDI/"+i+"_NY_GDP_MKTP_KN", authtoken='')
+            gdp = quandl.get("WWDI/"+i+"_NY_GDP_MKTP_KN", authtoken='cjnGZhzA7ExEVAXHarg_')
             gdp['country_code'] = i
             gdpDf = gdpDf.append(gdp)
         gdpDf['Date']=gdpDf.index
@@ -269,7 +269,7 @@ bbc.startBacktest(backTestStartOffset)
 
 visualize_analysis_pyplot(bbc.portfolio.equityCurve.index,bbc.portfolio.equityCurve.portfolio)
 
-workbook = xl.Workbook('backtestIshares.xlsx')
+workbook = xl.Workbook('backtest.xlsx')
 worksheetDashboard = workbook.add_worksheet('Dashboard')
 worksheetTradeLog = workbook.add_worksheet('Trade Log')
 worksheetDailyHoldings = workbook.add_worksheet('Daily Holdings')
