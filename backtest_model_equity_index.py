@@ -73,7 +73,7 @@ class model:
     def gdpData(self,countries,country_weights):
         gdpDf = pd.DataFrame({'Value':[],'country_code':[]})
         for i in countries:
-            gdp = quandl.get("WWDI/"+i+"_NY_GDP_MKTP_KN", authtoken='cjnGZhzA7ExEVAXHarg_')
+            gdp = quandl.get("WWDI/"+i+"_NY_GDP_MKTP_KN", authtoken='')
             gdp['country_code'] = i
             gdpDf = gdpDf.append(gdp)
         gdpDf['Date']=gdpDf.index
